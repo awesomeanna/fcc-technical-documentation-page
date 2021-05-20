@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCC: Technical Documentation Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="main-doc">
+        <nav id="navbar">
+            <header>Linux Command Line</header>
+            <ul>
+                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                <li> <a href="#Basics_and_Navigation" class="nav-link">Basics and Navigation</a> </li>
+                <li> <a href="#Home_Directory" class="nav-link">Home Directory</a> </li>
+                <li> <a href="#Present_Working_Directory" class="nav-link">Present Working Directory</a></li>
+                <li><a href="#List_Files_and_Directories" class="nav-link">List Files and Directories</a></li>
+                <li><a href="#Links" class="nav-link">Links</a></li>
+                <li><a href="#Change_Directories" class="nav-link">Change Directories</a></li>
+                <li><a href="#Creating_Directories" class="nav-link">Creating Directories</a></li>
+                <li><a href="#Deleting_Files" class="nav-link">Deleting Files</a></li>
+                <li><a href="#Reference" class="nav-link">Reference</a></li>
+            </ul>
+        </nav>
+        <section id="Introduction" class="main-section">
+            <header>Introduction</header>
+            <p>Linux is a family of open-source Unix-like operating systems based on the linux kernel by Linus Torvalds. Popular Linux distributions include Debian, Fedora and Ubuntu. Linux is one of the most prominent examples of free and open-source software
+                collaboration.
+            </p>
+        </section>
+        <section id="Basics_and_Navigation" class="main-section">
+            <header>Basics and Navigation</header>
+            <article>
+                <p>Understanding how to use the command line is imperative. This helps in navigating around directories, copying files, creating files among others.
+                    <!-- Talk about installing linux -->
+                    <!-- Virtual Machine (Recommended) -->
+                    <!-- Ubuntu/Windows Dual-Boot -->
+                    <!-- Running a terminal -->
+                </p>
+            </article>
+        </section>
+        <section id="Home_Directory" class="main-section">
+            <header>Home Directory </header>
+            <article>
+                <p>On Unix and Linux systems, every user has a "home" directory. Your home directory will be where your settings files get stored and where your desktop is kept. Finding the home directory is incredibly easy. Use the pwd command to get the
+                    path of your home directory.
+                </p>
+                <p>
+                    <code>$pwd</code>
+                </p>
+            </article>
+        </section>
+        <section id="Present_Working_Directory" class="main-section">
+            <header>Present Working Directory</header>
+            <article>
+                <p>
+                    Understanding where you are at any given time in your file system is important. This can be done by using the pwd command.
+                    <code>$pwd</code> pwd will list the "logical" path of your current directory.
+                </p>
+            </article>
+        </section>
+        <section id="List_Files_and_Directories" class="main-section">
+            <header>List Files and Directories</header>
+            <article>
+                <p>
+                    Listing helps you to see what files or directories are in your current directory, or another directory. To accomplish this, we use the ls command.
+                </p>
+                <p>
+                    <code>$ls</code>
+                </p>
+                <p>
+                    <ul>
+                        <li>Listing a Different Directory. By default, ls will operate in the current directory that you're in. You may, however, be able to find out what files are in another directory without leaving the current directory.
+                            <code>$ls /usr/local </code>
+                        </li>
+                        <li>Listing all Files. You can also view both "visible" and "invisible" or "hidden files" by using the -a flag.
+                            <code>$ls -a</code>
+                        </li>
+                        <li>Long Form Listing - This lists out the names of the files and directories as well as give more detailed information about them.
+                            <code>$ls -l</code>
+                        </li>
+                        <li>Human Readable Sizes - The -l flag aforementioned gives us a more detailed views of files and directories in our current directory, including the number of bytes in the file. It's, however, more useful to view the size of the file
+                            in human readable terms such as 1.7K or 35M.
+                            <code>$ls -lh</code>
+                        </li>
+                    </ul>
+                </p>
+            </article>
+        </section>
+        <section id="Links" class="main-section">
+            <header>Links</header>
+            <article>
+                <p>
+                    Links allow us to create an association from one file or directory to another. It allows us to "point" one file or directory to another. Links can either be "hard" or "symbolic" links.
+                    <ul>
+                        <li>Hard Links - Hard links create an identical copy of the linked file, that gets updated automatically as the source file gets updated. To create a link to a file, we call the ln command - first giving it the name of the file we
+                            want to link, followed by the name of the linked file we want to create.
+                            <code>$ln a.txt b.txt</code>
+                        </li>
+                        <li>Symbolic Links - Unfortunately, hard links do not work for directories. We can, however, use the -s flag to create a symbolic link. This can be used to link files as well as directories.
+                            <code>$ln -s a.txt b.txt</code>
+                        </li>
+                    </ul>
+                </p>
+            </article>
+        </section>
+        <section id="Change_Directories" class="main-section">
+            <header>Change Directories</header>
+            <article>
+                <p>
+                    Eventually, you'll need to change or navigate into another directory. This is done using the cd command. cd takes the argument of the path to the directory you wish to navigate to.
+                    <code>$cd ~/Downloads</code>
+                </p>
+                <p>
+                    You can navigate back to your home directory by calling the cd command without any arguments.
+                    <code>$cd</code>
+                </p>
+            </article>
+        </section>
+        <section id="Creating_Directories" class="main-section">
+            <header>Creating Directories</header>
+            <article>
+                <p>
+                    Directories are used to store and organize files. To create a directory, we can use the mkdir command followed by the name of the new directory.
+                    <code>$mkdir Projects</code>
+                </p>
+                <p>
+                    The mkdir command supports a verbose mode flag, -v that is used to print the results of mkdir to the console.
+                    <code>$mkdir -v Projects</code> The following is the output:
+                    <code>mkdir: created directory 'Projects' </code>
+                </p>
+            </article>
+        </section>
+        <section id="Deleting_Files" class="main-section">
+            <header>Deleting Files</header>
+            <article>
+                <p>The rm command is used to delete files and folders. It supports verbose mode flag as well.
+                    <code>$rm -v Projects</code>
+                </p>
+            </article>
+        </section>
+        <section id="Reference" class="main-section">
+            <header>Reference</header>
+            <article>
+                <p>All the documentation in this page is from <a href="conqueringthecommandline.com">Unix and Linux
+                        Commands for Developers.</a></p>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
